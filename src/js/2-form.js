@@ -60,7 +60,7 @@ console.log(feedbackForm);
 const emailInput = document.querySelector('input[name="email"]');
 const textareaInput = document.querySelector('textarea[name="message"]');
 const btnSubmit = document.querySelector('button');
-const label = document.querySelector('label');
+const labels = document.querySelectorAll('label');
 
 
 
@@ -68,8 +68,10 @@ const label = document.querySelector('label');
 emailInput.classList.add('email');
 textareaInput.classList.add('message');
 btnSubmit.classList.add('form-submit');
-label.classList.add('label');
+labels.forEach(label => {
 
+	label.classList.add('label');
+});
 
 btnSubmit.addEventListener('mouseover', function () {
 	btnSubmit.classList.add('hover-effect');

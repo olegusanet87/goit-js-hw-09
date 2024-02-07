@@ -4,7 +4,7 @@ import SimpleLightbox from "simplelightbox";
 
 import "simplelightbox/dist/simple-lightbox.min.css";
 
-const lightbox = new SimpleLightbox('.gallery a', { /* options */ });
+
 
 
 const images = [
@@ -101,3 +101,5 @@ images.forEach(({ preview: smallImage, original: largeImage, description: imageA
 });
 
 gallery.appendChild(fragment);
+
+const lightbox = new SimpleLightbox('.gallery a', { /* options */ });
