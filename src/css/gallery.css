@@ -10,3 +10,8 @@
 	flex-direction: row;
 	row-gap: 24px;
 }
+
+.gallery-image {
+	width: 360px;
+	height: 200px;
+}

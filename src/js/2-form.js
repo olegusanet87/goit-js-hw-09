@@ -1,4 +1,4 @@
-console.log("Form");
+
 
 const STORAGE_KEY = "feedback-form-state";
 
@@ -38,14 +38,12 @@ feedbackForm.addEventListener('submit', (event) => {
 
 
 feedbackForm.addEventListener('input', (event) => {
-	event.preventDefault();
+	
 	const data = readFormData(event.currentTarget);
 	const jsonData = JSON.stringify(data);
 	localStorage.setItem(STORAGE_KEY, jsonData);
-})
-feedbackForm.addEventListener('submit', (event) => {
+});
 
-})
 
 
 
@@ -56,7 +54,7 @@ if (rawData) {
 	feedbackForm.message.value = data.message;
 }
 
-console.log(feedbackForm);
+
 const emailInput = document.querySelector('input[name="email"]');
 const textareaInput = document.querySelector('textarea[name="message"]');
 const btnSubmit = document.querySelector('button');
@@ -113,29 +111,3 @@ textareaInput.addEventListener('blur', function () {
 	this.removeAttribute('placeholder');
 });
 
-emailInput.addEventListener('input', function () {
-	if (this.value.trim() !== '') {
-		this.removeAttribute('placeholder');
-	}
-});
-
-textareaInput.addEventListener('input', function () {
-	if (this.value.trim() !== '') {
-		this.removeAttribute('placeholder');
-	}
-});
-/*
-feedbackForm.addEventListener("submit", handleSubmit);
-function handleSubmit(event) {
-	event.preventDefault();
-
-	const email = this.elements.email.value.trim();
-	const message = this.elements.message.value.trim();
-
-	if (email === "" || message === "") {
-		alert("All form fields must be filled in");
-		return;
-	}
-	
-}
-*/

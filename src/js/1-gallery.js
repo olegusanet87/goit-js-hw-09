@@ -1,5 +1,3 @@
-console.log("Gallery");
-
 import SimpleLightbox from "simplelightbox";
 
 import "simplelightbox/dist/simple-lightbox.min.css";
@@ -72,7 +70,7 @@ const images = [
 		description: 'Lighthouse Coast Sea',
 	},
 ];
-//console.log(images);
+
 
 const gallery = document.querySelector('.gallery');
 console.log(gallery);
@@ -92,9 +90,6 @@ images.forEach(({ preview: smallImage, original: largeImage, description: imageA
 	img.src = smallImage;
 	img.dataset.source = largeImage;
 	img.alt = imageAlt;
-	img.style.width = '360px';
-	img.style.height = '200px';
-
 	galleryLink.appendChild(img);
 	galleryItem.appendChild(galleryLink);
 	fragment.appendChild(galleryItem);
@@ -102,4 +97,7 @@ images.forEach(({ preview: smallImage, original: largeImage, description: imageA
 
 gallery.appendChild(fragment);
 
-const lightbox = new SimpleLightbox('.gallery a', { /* options */ });
+const lightbox = new SimpleLightbox('.gallery a', {
+	captionsData: 'alt',
+	captionDelay: 250
+});
